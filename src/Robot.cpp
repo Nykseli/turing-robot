@@ -63,7 +63,6 @@ void Robot::subCommand(Command command) {
 }
 
 void Robot::copytoCommand(Command command){
-    //CopytoCommand* cCommand = (CopytoCommand*) command.command;
     if(!this->hand.empty){
         std::map<int, int>::iterator it = this->memory.find(command.position);
         if(it != this->memory.end()){
@@ -77,7 +76,6 @@ void Robot::copytoCommand(Command command){
 }
 
 void Robot::copyfromCommand(Command command){
-    //CopyfromCommand* cCommand = (CopyfromCommand*) command.command;
     this->hand.value = this->memory.find(command.position)->second;
     this->hand.empty = false;
 }
